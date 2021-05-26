@@ -11,9 +11,10 @@ import Rank from './components/Rank/Rank';
 import './App.css';
 
 
+
 const app = new Clarifai.App({
-    apiKey: 'YOUR API KEY HERE'
-});
+    apiKey: '5cb81de9aa90440eb61bb0bc3edca94a'
+})
 
 const particlesOptions = {
     particles: {
@@ -97,7 +98,7 @@ class App extends Component {
             .then(response => {
                 console.log('hi', response)
                 if (response) {
-                    fetch('http://localhost:3000/image', {
+                    fetch('https://facerecognitionbrainapi.herokuapp.com/image', {
                         method: 'put',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
